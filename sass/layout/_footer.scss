@@ -1,0 +1,96 @@
+.footer {
+    padding: 6rem 0;
+    background-color: $gray-dark-2;
+    font-size: 1.4rem;
+    background-image: linear-gradient(180deg, $MediumGreen 0%,
+                        $gray-dark-2 4%);
+    color: $gray-light-1;
+    border-bottom-right-radius: $border-round;
+    border-bottom-left-radius: $border-round;
+    position: relative;
+
+    @include respond(tab-land) {  // > 1200
+        padding: 4rem 0;
+    }
+
+    &__logo {
+        width: 15rem;
+        height: auto;
+
+        @include respond(tab-land) {  // > 1200
+            width: 6rem !important;
+        }
+
+        @include respond(phone) {  // > 600
+            width: 15rem !important;
+            transform: translateY(-1rem);
+        }
+    }
+
+    &__logo-box {
+        @include centerItem;
+
+        @include respond(tab-land) {  // > 1200
+            transform: translate(-50%, -80%);
+        }
+
+        @include respond(tab-port) {  // > 900
+            transform: translate(-50%, -140%);
+        }
+    }
+
+    &__navigation {
+        border-top: 1px solid $gray-light-1;
+        padding-top: 2rem;
+        text-align: center;
+        display: inline-block;
+
+        
+        @include respond(tab-land) {  // > 900
+            width: 100%;
+            padding-top: 1rem;
+        }
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link{
+        transition: all .15s;
+        &:visited,
+        &:link{
+            color: $gray-light-1;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+        }   
+
+        &:hover,
+        &:active {
+            color: $LightGreen;
+            text-shadow: 0 1rem 2rem rgba($black, .6);
+            transform: scale(1.1) translateY(-2px);
+        }
+    }
+
+    &__copyright {
+        border-top: 1px solid $gray-light-1;
+        padding-top: 2rem;
+        width: 80%;
+        float: right;
+
+        @include respond(tab-land) {  // > 900
+            width: 100%;
+            float: none;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.row{
+    max-width: $grid-width;
+    margin: 0 auto;
+
+    @include respond(tab-port) {  // > 900
+        max-width: $grid-width-small;
+    }
+
+    &:not(:last-child){
+        margin-bottom: $vartical-margin;
+
+        @include respond(tab-port) {  // > 1200
+            margin-bottom: $vartical-margin-small;
+        }
+    }
+
+    @include fixFloat;
+
+    [class^= "col-"] {
+        float: left;
+
+        &:not(:last-child){
+            margin-right: $horizontal-margin;
+
+            @include respond(tab-land) {  // > 1200
+                margin-right: 0;
+                margin-bottom: $vartical-margin-small;
+            }
+        }
+
+        @include respond(tab-land) {  // > 1200
+            width: 100% !important;
+            padding: 0 3rem;
+        }
+    }
+    .col-1-of-2{
+        width: calc((100% - #{$horizontal-margin}) / 2);
+    }
+
+    .col-1-of-3{
+        width: calc((100% - #{$horizontal-margin} * 2) / 3);
+    }
+
+    .col-2-of-3{
+        width: calc(2 * ((100% - #{$horizontal-margin} * 2) / 3) + #{$horizontal-margin});
+    }
+
+    .col-1-of-4{
+        width: calc((100% - #{$horizontal-margin} * 3) / 4);
+    }
+
+    .col-2-of-4{
+        width: calc(2 * ((100% - #{$horizontal-margin} * 3) / 4) + #{$horizontal-margin});
+    }
+
+    .col-3-of-4{
+        width: calc(3 * ((100% - #{$horizontal-margin} * 3) / 4) + #{$horizontal-margin} * 2);
+    }
+
+}

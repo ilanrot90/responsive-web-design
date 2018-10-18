@@ -1,0 +1,36 @@
+.feature-box {
+    background-color: rgba($White, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 1.2rem 4rem rgba($black, .15);
+    border-radius: $border-round;
+    transition: all .2s;
+
+    @include respond(tab-land) {  // > 1200
+        transform: translateY(-1.5rem) scale(1);
+        box-shadow: 0 2.2rem 4rem rgba($black, .35);
+    }
+    
+    @include respond(tab-port) {  // > 900
+        padding: 2rem;
+    }
+
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        background-image: linear-gradient(to right bottom, $LightGreen, $DarkGreen);
+        display: inline-block;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        @include respond(tab-port) {  // > 900
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.05);
+        box-shadow: 0 2.2rem 4rem rgba($black, .35);
+    }
+}

@@ -1,0 +1,36 @@
+.header{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba($LightGreen, 0.8), rgba($DarkGreen, 0.8)),
+                        url('../img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+    border-top-left-radius: $border-round;
+    border-top-right-radius: $border-round;
+
+    @include respond(tab-port) {  // > 600
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__img-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 3.5rem;
+    }
+    
+    &__title-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    
+}
